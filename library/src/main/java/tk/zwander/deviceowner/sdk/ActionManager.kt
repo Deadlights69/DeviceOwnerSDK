@@ -9,14 +9,14 @@ class ActionManager private constructor(private val context: Context) {
     companion object {
         @SuppressLint("StaticFieldLeak")
         private var instance: ActionManager? = null
-        
+
         fun getInstance(context: Context): ActionManager {
             if (instance == null) instance = ActionManager(context.applicationContext)
-            
+
             return instance!!
         }
     }
-    
+
     val service: IActionService?
         get() = context.adminService
 
